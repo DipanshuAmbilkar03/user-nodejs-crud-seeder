@@ -1,7 +1,6 @@
 # user-nodejs-crud-seeder
 
-# Repository Description =>
-### User Data Management Application with Faker, EJS, and MySQL
+## Repository Description => ### User Data Management Application with Faker, EJS, and MySQL
 
 ## This repository contains a Node.js application that demonstrates user data management using various technologies:
 
