@@ -1,0 +1,21 @@
+{
+  "name": "sql-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DIPANSHU AMBILKAR",
+  "license": "ISC",
+  "description": "Collection of Mysql2,express,nodemon,uuid,ejs Packages.",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.0",
+    "nodemon": "^3.1.4",
+    "uuid": "^10.0.0"
+  }
+}
