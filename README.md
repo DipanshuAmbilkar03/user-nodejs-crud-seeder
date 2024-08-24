@@ -22,5 +22,5 @@ To handle HTTP verbs such as PATCH in forms.
 
 ## Features
 
-## User CRUD Operations.
+## Using CRUD Operations.
 Data Seeding: Script to populate the MySQL database with user data for testing.
