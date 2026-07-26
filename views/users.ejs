@@ -1,42 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
-</head>
-<body>
-    <style>
-        * {
-            background-color : #11c18f;
-        }
-        button {
-            background-color :rgb(245, 168, 168);
-        }
-        table,th,td {
-            color :#000000;
-            border : 1.2px solid rgb(202, 88, 88);
-        }
-    </style>
-    <h1>ALL USER </h1>
+﻿<%- include("partials/header", { title: "Users" }) %>
+
+<div class="page-header">
+  <div>
+    <h1>All users</h1>
+    <p class="muted">Browse and manage every user in the database.</p>
+  </div>
+  <a class="btn btn-primary" href="/user/new">Add user</a>
+</div>
+
+<% if (notice) { %>
+  <div class="alert alert-success"><%= notice %></div>
+<% } %>
+
+<div class="table-wrap">
+  <% if (!users.length) { %>
+    <div class="empty">
+      <p>No users found yet.</p>
+      <a class="btn btn-primary" href="/user/new">Create the first user</a>
+    </div>
+  <% } else { %>
     <table>
+      <thead>
         <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Email</th>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Actions</th>
         </tr>
-        <% for (user of users) { %>
-            <tr>
-                <td><%= user.id %></td>
-                <td><%= user.username %></td>
-                <td><%= user.email %></td>
-                <td>
-                    <form method="GET" action="/user/<%=user.id %>/edit">
-                        <button>edit username</button>
-                    </form>
-                </td>
-            </tr>
+      </thead>
+      <tbody>
+        <% for (let user of users) { %>
+          <tr>
+            <td class="mono"><%= user.id %></td>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td>
+              <div class="row-actions">
+                <a class="btn btn-secondary btn-sm" href="/user/<%= user.id %>/edit">Edit</a>
+                <form method="POST" action="/user/<%= user.id %>?_method=DELETE" onsubmit="return confirm('Delete this user permanently?');">
+                  <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                </form>
+              </div>
+            </td>
+          </tr>
         <% } %>
+      </tbody>
     </table>
-</body>
-</html>
+  <% } %>
+</div>
+
+<%- include("partials/footer") %>

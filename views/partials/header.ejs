@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= typeof title !== "undefined" ? title + " | " : "" %>User Manager</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-inner">
+        <a class="brand" href="/">
+          <span class="brand-badge">U</span>
+          <span>User Manager</span>
+        </a>
+        <nav class="nav-links">
+          <a class="btn btn-secondary btn-sm" href="/">Dashboard</a>
+          <a class="btn btn-secondary btn-sm" href="/user">Users</a>
+          <a class="btn btn-primary btn-sm" href="/user/new">Add User</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">

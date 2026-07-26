@@ -1,0 +1,13 @@
+﻿<%- include("partials/header", { title: title || "Error" }) %>
+
+<section class="card form-card" style="text-align:center;">
+  <p class="muted">Error <%= status %></p>
+  <h1><%= title %></h1>
+  <p class="muted"><%= message %></p>
+  <div class="form-actions" style="justify-content:center;">
+    <a class="btn btn-primary" href="/">Go home</a>
+    <a class="btn btn-secondary" href="/user">View users</a>
+  </div>
+</section>
+
+<%- include("partials/footer") %>

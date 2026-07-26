@@ -1,21 +1,26 @@
-{
-  "name": "sql-node",
-  "version": "1.0.0",
+﻿{
+  "name": "user-nodejs-crud-seeder",
+  "version": "1.1.0",
+  "description": "User data management app with Express, MySQL, EJS, and Faker seeding",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node seed.js"
   },
   "author": "DIPANSHU AMBILKAR",
   "license": "ISC",
-  "description": "Collection of Mysql2,express,nodemon,uuid,ejs Packages.",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "method-override": "^3.0.0",
     "mysql": "^2.18.1",
-    "mysql2": "^3.11.0",
-    "nodemon": "^3.1.4",
+    "mysql2": "^3.15.3",
     "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
   }
 }

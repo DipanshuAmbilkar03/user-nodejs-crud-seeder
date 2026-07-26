@@ -1,16 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDIT ID</title>
-</head>
-<body>
-    <h2>To Edit your Username <i><%=user.username%></i> Please enter your password</h2>
-    <form method="post" action="/user/<%=user.id%>?_method=PATCH">
-        <textarea name="username"><%=user.username%></textarea>
-        <input placeholder="enter password" type="password" name="password">
-        <button>SUBMIT</button>
-    </form>
-</body>
-</html>
+﻿<%- include("partials/header", { title: "Edit User" }) %>
+
+<section class="card form-card">
+  <h1>Edit username</h1>
+  <p class="muted">
+    Updating <strong><%= user.username %></strong>
+    <% if (user.email) { %>(<%= user.email %>)<% } %>.
+    Enter the current password to confirm.
+  </p>
+
+  <% if (error) { %>
+    <div class="alert alert-error"><%= error %></div>
+  <% } %>
+
+  <form method="POST" action="/user/<%= user.id %>?_method=PATCH">
+    <label for="username">New username</label>
+    <input id="username" name="username" type="text" value="<%= user.username %>" required maxlength="50" />
+
+    <label for="password">Current password</label>
+    <input id="password" name="password" type="password" placeholder="Enter current password" required />
+
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Save changes</button>
+      <a class="btn btn-secondary" href="/user">Back to users</a>
+    </div>
+  </form>
+</section>
+
+<%- include("partials/footer") %>

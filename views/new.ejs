@@ -1,0 +1,28 @@
+﻿<%- include("partials/header", { title: "Add User" }) %>
+
+<section class="card form-card">
+  <h1>Add a new user</h1>
+  <p class="muted">Fill in the details below to create a user record.</p>
+
+  <% if (error) { %>
+    <div class="alert alert-error"><%= error %></div>
+  <% } %>
+
+  <form method="POST" action="/user">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" value="<%= form.username %>" required maxlength="50" />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" value="<%= form.email %>" required maxlength="80" />
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" required maxlength="50" />
+
+    <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Create user</button>
+      <a class="btn btn-secondary" href="/user">Cancel</a>
+    </div>
+  </form>
+</section>
+
+<%- include("partials/footer") %>

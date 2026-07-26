@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDIT ID</title>
-</head>
-<body>
-    <h2>To Edit your Username <i><%=user.username%></i> Please enter your password</h2>
-    <form method="post" action="/user/<%=user.id%>?_method=PATCH">
-        <textarea name="username"><%=user.username%></textarea>
-        <input placeholder="enter password" type="password" name="password">
-        <button>SUBMIT</button>
-    </form>
-</body>
-</html>
+﻿<%- include("partials/header", { title: "Dashboard" }) %>
+
+<section class="hero">
+  <div>
+    <p class="muted">Node.js CRUD + Seeder Demo</p>
+    <h1>Manage users with a clean, modern dashboard</h1>
+    <p>
+      Create, view, update, and delete users stored in MySQL. Seed sample data
+      instantly for demos and local testing.
+    </p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="muted">Total registered users</span>
+      <strong><%= count %></strong>
+    </div>
+    <div class="stat">
+      <span class="muted">Stack</span>
+      <strong style="font-size: 1.15rem; margin-top: 0.7rem;">Express · MySQL · EJS</strong>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a class="btn btn-primary" href="/user">View all users</a>
+    <a class="btn btn-secondary" href="/user/new">Add new user</a>
+  </div>
+</section>
+
+<%- include("partials/footer") %>
